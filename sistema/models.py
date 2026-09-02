@@ -10,4 +10,15 @@ class Paciente(models.Model):
     telefone = models.CharField(max_length=20) # Telefone de contato
     criacao_data = models.DateTimeField(default=timezone.now) #Data/hora cadastro
     mensagem = models.TextField(blank=True) # Campo opcional livre para mensagem
-    ativo = models.BooleanField(default=True) #  
+    ativo = models.BooleanField(default=True) #  Campo de exclusão lógica
+
+class Medico(models.Model):
+    nome = models.CharField(max_length=25)
+    sobrenome = models.CharField(max_length=50)
+    email = models.EmailField()
+    criacao_data = models.DateTimeField(default=timezone.now)
+    telefone = models.CharField()
+    crm = models.CharField(max_length=6)
+    especialidade = models.CharField()
+    mensagem = models.TextField(blank=True)
+    ativo = models.BooleanField(default=True)
