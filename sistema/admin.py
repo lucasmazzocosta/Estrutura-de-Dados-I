@@ -8,3 +8,7 @@ class PacienteAdmin(admin.ModelAdmin):
 @admin.register(models.Medico)
 class MedicoAdmin(admin.ModelAdmin):
     list_display = ('id', 'nome', 'email', 'telefone', 'especialidade', 'crm', 'ativo')
+
+@admin.register(models.Consulta)
+class ConsultaAdmin(admin.ModelAdmin):
+    list_display = ('id', 'paciente_id', 'medico_id', 'status', )

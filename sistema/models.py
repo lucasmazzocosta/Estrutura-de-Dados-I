@@ -12,6 +12,10 @@ class Paciente(models.Model):
     mensagem = models.TextField(blank=True) # Campo opcional livre para mensagem
     ativo = models.BooleanField(default=True) #  Campo de exclusão lógica
 
+    def __str__(self):
+        return f"{self.nome} {self.sobrenome}"
+
+# modelo que representa um Médico
 class Medico(models.Model):
     nome = models.CharField(max_length=25)
     sobrenome = models.CharField(max_length=50)
@@ -22,3 +26,25 @@ class Medico(models.Model):
     especialidade = models.CharField()
     mensagem = models.TextField(blank=True)
     ativo = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.nome} {self.sobrenome}"
+
+# modelo que representa uma consulta
+#id, id do paciente, id do medico, horario/data, obs, status
+class Consulta(models.Model):
+    paciente_id = models.ForeignKey(Paciente, on_delete=models.CASCADE) # Chave estrangeira
+    medico_id = models.ForeignKey(Medico, on_delete=models.CASCADE) # Chave estrangeira
+    data_consulta = models.DateTimeField(default=timezone.now) # Data/hora consulta
+    ativa = models.BooleanField(default=True) # Campo de exclusão lógica
+    observacao = models.TextField(blank=True) # Anotacao adicional
+    status = models.CharField(
+        default="A",
+        max_length=1,
+        choices=[
+            ("A", "Agendada"),
+            ("X", "Cancelada"),
+            ("C", "Confirmada"),
+            ("R", "Realizada"),
+        ]
+    )
