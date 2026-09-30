@@ -6,8 +6,3 @@ from django.shortcuts import render
 def medico_view(request):
     print('Página médico funcionou')
     return HttpResponse('Página inicial do médico')
-
-# View responsável pela tela inicial do home
-def home_view(request):
-    print('Página home funcionou')
-    return HttpResponse('Página inicial do home')
