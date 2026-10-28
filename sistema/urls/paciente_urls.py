@@ -3,9 +3,9 @@ from sistema.views import *
 
 url_patterns = [
     path('paciente/', index), # vollmed.com/paciente
-    path('paciente/novo/'), # vollmed.com/paciente/novo
-    path('paciente/perfil/<int:paciente_id>'), # vollmed.com/paciente/perfil/<int:paciente_id>
-    path('paciente/listagem', listar_pacientes), # vollmed.com/paciente/listagem
+    # path('paciente/novo/'), # vollmed.com/paciente/novo
+    # path('paciente/perfil/<int:paciente_id>'), # vollmed.com/paciente/perfil/<int:paciente_id>
+    # path('paciente/listagem', listar_pacientes), # vollmed.com/paciente/listagem
 ]
 
 # path variable 

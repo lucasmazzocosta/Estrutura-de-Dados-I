@@ -7,20 +7,20 @@ from sistema.models import Paciente
 def index(request):
     return render(
         request, 
-        'global/base.html',
+        '',
         )
 
 # View responsável por listar todos os pacientes
-def listar_pacientes(request):
-    pacientes = Paciente.objects.all() # -> [objeto1, objeto2, objeto3]
+# def listar_pacientes(request):
+#     pacientes = Paciente.objects.all() # -> [objeto1, objeto2, objeto3]
 
-    context = {
-        'pacientes': pacientes
-    }
+#     context = {
+#         'pacientes': pacientes
+#     }
 
-    return render(
-        request,
-        'paciente/listar.html',
-        context,
-    )
+#     return render(
+#         request,
+#         'paciente/listar.html',
+#         context,
+#     )
 
