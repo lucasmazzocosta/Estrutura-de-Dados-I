@@ -8,6 +8,7 @@ class Paciente(models.Model):
     sobrenome = models.CharField(max_length=50) # Sobrenome do paciente
     email = models.EmailField() # Email de contato do paciente
     telefone = models.CharField(max_length=20) # Telefone de contato
+    cpf = models.CharField(max_length=11) # CPF com 11 dígitos sem traço e ponto.
     criacao_data = models.DateTimeField(default=timezone.now) #Data/hora cadastro
     mensagem = models.TextField(blank=True) # Campo opcional livre para mensagem
     ativo = models.BooleanField(default=True) #  Campo de exclusão lógica
